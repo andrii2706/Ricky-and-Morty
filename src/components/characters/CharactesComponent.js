@@ -23,5 +23,6 @@ export default function CharactesComponent(){
     {
         characters.map(value=> <CharacterComponent item={value}/>)
     }
+
 </div>
 )}
