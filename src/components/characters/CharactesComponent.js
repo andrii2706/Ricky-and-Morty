@@ -1,28 +1,46 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import CharacterComponent from "./CharacterComponent";
-
-export default function CharactesComponent(){
+import ReactPaginate from 'react-paginate'
+import '../../styles/Characters.css'
+// import {Pagination} from "@material-ui/lab";
+export default function CharactesComponent() {
 
     const [characters, setCharacters] = useState([])
-
-    useEffect(()=>{
-        fetch('https://rickandmortyapi.com/api/character')
-            .then(value => value.json())
+    const [page, setCurrentPage] = useState(0)
+    const [pageCount, setPageCount] = useState(1)
+    // const handleFetch = () =>{
+    //     fetch(`https://rickandmortyapi.com/api/character?page=${page}`)
+    // }
+    const url = `https://rickandmortyapi.com/api/character?page=${page}`
+    const handleFetch = () => {
+        fetch(url)
+            .then(response => response.json())
             .then(value => {
-                setCharacters(value.results)
-
+                setCharacters([...value.results]);
+                setPageCount(value.pages)
             })
-        // fetch(`https://rickandmortyapi.com/api/character/${page}`)
-        //     .then(response=> response.json)
-        //     .then(value => value.json)
-    },[])
-
-
+        console.log(handleFetch());
+    }
+    const handlePageChange = (selectedObject) => {
+    setCurrentPage(selectedObject.selected);
+    handleFetch();
+}
     return(
 <div>
+    <button onClick={handleFetch}>Get Data</button>
     {
-        characters.map(value=> <CharacterComponent item={value}/>)
+        characters.map(value=> <CharacterComponent  item={value}/>)
     }
 
+    <div className="container"><ReactPaginate
+        pageCount={pageCount}
+        pageRange={1}
+        marginPagesDisplayed={2}
+        onPageChange={handlePageChange}/>
+    {/*    <Pagination count={page} defaultPage={1}  onChange={handlePageChange} variant="outlined" color="secondary" />*/}
+    </div>
 </div>
 )}
+
+
+

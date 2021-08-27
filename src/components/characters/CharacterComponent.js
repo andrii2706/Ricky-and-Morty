@@ -1,6 +1,7 @@
 export default function CharacterComponent({item}){
 return(
 <div>
-    CharacterComponent
+    {item.id}
+    {item.name}
 </div>
 )}
