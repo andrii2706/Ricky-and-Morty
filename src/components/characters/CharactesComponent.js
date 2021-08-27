@@ -1,45 +1,42 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import CharacterComponent from "./CharacterComponent";
-import ReactPaginate from 'react-paginate'
 import '../../styles/Characters.css'
+import {useDispatch, useSelector} from "react-redux";
+import {changePagination, getAllCharacters} from "../../redux/actions/actionCreators";
+import {Pagination} from "@material-ui/lab";
 // import {Pagination} from "@material-ui/lab";
 export default function CharactesComponent() {
 
+    const {pageNext, pagePrev,totalNumberOfPages} = useSelector(state => state)
+    const dispatch = useDispatch()
+
     const [characters, setCharacters] = useState([])
-    const [page, setCurrentPage] = useState(0)
-    const [pageCount, setPageCount] = useState(1)
-    // const handleFetch = () =>{
-    //     fetch(`https://rickandmortyapi.com/api/character?page=${page}`)
-    // }
-    const url = `https://rickandmortyapi.com/api/character?page=${page}`
-    const handleFetch = () => {
-        fetch(url)
+
+    useEffect(()=>{
+        fetch(`https://rickandmortyapi.com/api/character?page=${pageNext}`)
             .then(response => response.json())
-            .then(value => {
-                setCharacters([...value.results]);
-                setPageCount(value.pages)
-            })
-        console.log(handleFetch());
-    }
-    const handlePageChange = (selectedObject) => {
-    setCurrentPage(selectedObject.selected);
-    handleFetch();
-}
+            .then(value => dispatch(getAllCharacters(value)))
+    },[pageNext])
+    useEffect(()=>{
+        fetch(`https://rickandmortyapi.com/api/character?page=${pagePrev}`)
+            .then(response=>response.json())
+            .then(value => dispatch(getAllCharacters(value)))
+    },[pagePrev])
+
+    const handlePaginationChange = (event,value) => dispatch(changePagination(value))
     return(
 <div>
-    <button onClick={handleFetch}>Get Data</button>
-    {
+        {
         characters.map(value=> <CharacterComponent  item={value}/>)
     }
-
-    <div className="container"><ReactPaginate
-        pageCount={pageCount}
-        pageRange={1}
-        marginPagesDisplayed={2}
-        onPageChange={handlePageChange}/>
-    {/*    <Pagination count={page} defaultPage={1}  onChange={handlePageChange} variant="outlined" color="secondary" />*/}
+    <div>
+        <Pagination
+            count={totalNumberOfPages}
+            onChange={handlePaginationChange}
+            color="primary"
+        />
     </div>
-</div>
+    </div>
 )}
 
 
