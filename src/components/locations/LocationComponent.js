@@ -1,3 +1,4 @@
+import '../../styles/Locations.css'
 export default function LocationComponent({item}){
 return(
 <div className="locations-component">
