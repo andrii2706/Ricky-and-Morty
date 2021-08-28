@@ -63,19 +63,5 @@ export default function CharactesComponent() {
         </div>
     )
 }
-// const [characters, setCharacters] = useState([])
-// useEffect(()=>{
-//     fetch('https://rickandmortyapi.com/api/character')
-//         .then(value => value.json())
-//         .then(value => {
-//             setCharacters(value.results)
-//
-//         })
-// fetch('https://rickandmortyapi.com/api/character')
-//     .then(response => response.json())
-//     .then(json => console.log(json))
-// fetch(`https://rickandmortyapi.com/api/character/${page}`)
-//     .then(response=> response.json)
-//     .then(value => value.json)
-// },[])
+
 
