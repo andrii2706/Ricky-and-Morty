@@ -6,12 +6,14 @@ import CharactesComponent from "../characters/CharactesComponent";
 import MyWatchListComponent from "../my-watch-list/MyWatchListComponent";
 
 import '../../styles/Wrap.css'
+import EpisodesComponents from "../episodes/EpisodesComponents";
+import LocationsComponents from "../locations/LocationsComponents";
 
 export default function Wrap(){
 return(
     <BrowserRouter>
         <div className="wrap">
-            <div className="logo"><img src="" alt="Logo"/></div>
+            <div className="logo"><img src="https://rickandmortyapi.com/" alt="Logo"/></div>
             <div className="nav">
                 <Link to={'/'}>Home</Link>
                 <Link to={'/episodes'}>Episodes</Link>
@@ -27,8 +29,8 @@ return(
         <div>
             <Switch>
                 <Route exact path={'/'} component={HomeComponent}/>
-                <Route path={'/episodes'} component={EpisodComponent}/>
-                <Route path={'/locations'} component={LocationComponent}/>
+                <Route path={'/episodes'} component={EpisodesComponents}/>
+                <Route path={'/locations'} component={LocationsComponents}/>
                 <Route path={'/characters'} component={CharactesComponent}/>
                 <Route path={'/my-watch-list'} component={MyWatchListComponent}/>
             </Switch>

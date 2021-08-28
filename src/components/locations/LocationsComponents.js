@@ -1,35 +1,36 @@
 import {useEffect, useState} from "react";
-import EpisodComponent from "./EpisodComponent";
-import '../../styles/Episodes.css'
-export default function EpisodesComponents(){
-    const[episodes, setEpisodes] = useState([])
-    const[info, setInfo] = useState({})
-    const url='https://rickandmortyapi.com/api/episode'
+import LocationComponent from "./LocationComponent";
+import '../../styles/Locations.css'
+export default function LocationsComponents(){
 
-    const fetchEpisodes = (url)=>{
+    const [locations, setLocations]=useState([])
+    const [info, setInfo]=useState({})
+    const url = 'https://rickandmortyapi.com/api/location'
+
+    const fetchLoactions = (url) =>{
         fetch(url)
             .then((response)=>response.json())
             .then((data)=>{
-                setEpisodes(data.results);
-                setInfo(data.info);
+                setLocations(data.results)
+                setInfo(data.info)
             })
             .catch((error)=>{
                 console.log(error);
             })
     }
-    const handleNextPage =()=>{
-        fetchEpisodes(info.next);
+    const handleNextPage = () =>{
+        fetchLoactions(info.next);
         window.scrollTo(0,0);
-    };
-    const handlePreviousPage =()=>{
-        fetchEpisodes(info.prev);
+    }
+    const handlePreviousPage = ()=>{
+        fetchLoactions(info.prev);
         window.scrollTo(0,0);
-    };
+    }
     useEffect(()=>{
-        fetchEpisodes(url);
+        fetchLoactions(url)
     },[])
 
-return(
+    return(
 <div>
     <div className="pagination">
         <div className="container py-5">
@@ -53,9 +54,9 @@ return(
             </nav>
         </div>
     </div>
-    <div className="block-of-episodes">
+    <div className="location-flex-direction">
         {
-            episodes.map(value => <EpisodComponent item={value}/>)
+            locations.map(value => <LocationComponent item={value}/>)
         }
     </div>
 </div>

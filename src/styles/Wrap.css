@@ -1,16 +1,22 @@
-.wrap{
+.wrap {
     display: flex;
     justify-content: space-around;
-  align-items: center;
+    align-items: center;
     padding: 25px;
+    background: white;
+    color: black;
+    border-radius: 10px;
 }
-.wrap a{
+
+.wrap a {
     text-decoration: none;
-    color: white;
+    color: black;
     margin-left: 15px;
 }
-.wrap a:hover{
-    color: tomato;
+
+.wrap a:hover {
+    font-size: 25px;
+    color: darkblue;
     -webkit-transition: .2s ease-out;
     -webkit-transition-delay: 1ms;
     -o-transition: .2s ease-out;

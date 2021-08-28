@@ -1,0 +1,20 @@
+.locations-component{
+    background: #616b89;
+    width: 200px;
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+}
+.location-flex-direction{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 15px;
+
+    justify-content: center;
+
+}
