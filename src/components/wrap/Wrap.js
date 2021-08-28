@@ -22,8 +22,7 @@ return(
             <div className="user-info">
                 <h3>User - Andrii Paslavskiy</h3>
                 <a href="https://github.com/andrii2706">To my GitHub</a>
-                <a href="#">To my CV</a>
-            </div>
+                            </div>
         </div>
         <div>
             <Switch>
