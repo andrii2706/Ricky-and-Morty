@@ -1,8 +1,9 @@
 import "../../styles/Characters.css"
 import {BrowserRouter, Link} from "react-router-dom";
-export default function CharacterComponent({item}){
-return(
-   <BrowserRouter>
+
+export default function CharacterComponent({item}) {
+    return (
+        <BrowserRouter>
             <div className="card">
                 <div className="info">
                     <img src={item.image} alt="characters" className="image"/>
@@ -11,5 +12,6 @@ return(
                     <h4>Gender - {item.gender}</h4>
                     <h4>Species - {item.gender}</h4></div>
             </div>
-    </BrowserRouter>
-)}
+        </BrowserRouter>
+    )
+}

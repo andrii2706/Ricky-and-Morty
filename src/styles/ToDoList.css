@@ -1,0 +1,60 @@
+.header-todo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+}
+
+.form-direction {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.list-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    background: #616b89;
+    border-radius: 10px;
+}
+
+.center {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    margin-top: 20px;
+    width: 150px;
+    font-size: 25px;
+    background: #616b89;
+    color: white;
+}
+
+.button:hover {
+    color: tomato;
+    background: #282c34;
+    -webkit-transition: .2s ease-out;
+    -webkit-transition-delay: 1ms;
+    -o-transition: .2s ease-out;
+    -o-transition-delay: 1ms;
+    -moz-transition: .2s ease-out;
+    -moz-transition-delay: 1ms;
+    transition: .2s ease-out;
+    transition-delay: 1ms;
+}
