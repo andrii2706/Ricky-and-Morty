@@ -4,16 +4,22 @@
     column-gap: 25px;
     margin: 20px 150px ;
 }
-
 .card{
+    background: #616b89;
     margin-bottom: 10px;
 
     border: 1px solid black;
      border-radius: 12px ;
-
+    width: auto;
+}
+.info{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .image{
     border-radius: 12px;
 }
+
+

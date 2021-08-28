@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import CharacterComponent from "./CharacterComponent";
-import "../../styles/Characters.css"
+import "../../styles/Characters.css";
+import "../../styles/Pagination.css"
 export default function CharactesComponent(){
 
    const [characters, setCharacters] = useState([])
@@ -32,7 +33,8 @@ export default function CharactesComponent(){
         fecthCharacters (url);
     }, []);
    return(
-<div className="">
+       <div>
+<div className="pagination">
     <div className="container py-5">
         <nav>
             <ul className="pagination justify-content-center">
@@ -53,11 +55,11 @@ export default function CharactesComponent(){
             </ul>
         </nav>
     </div>
+</div>
     <div className="block">{
         characters.map(value => <CharacterComponent item={value}/>)
     }</div>
-
-</div>
+       </div>
 )}
 // const [characters, setCharacters] = useState([])
 // useEffect(()=>{

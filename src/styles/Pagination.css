@@ -1,15 +1,23 @@
-.wrap{
-    display: flex;
-    justify-content: space-around;
-  align-items: center;
-    padding: 25px;
+.pagination{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
-.wrap a{
-    text-decoration: none;
+li{
+    list-style: none;
+}
+.page-item{
+    margin-left: 10px;
+}
+.page-link{
+    width: 100px;
+    font-size: 20px;
+    background: #616b89;
+    border-radius: 10px;
     color: white;
-    margin-left: 15px;
 }
-.wrap a:hover{
+.page-link:hover{
     color: tomato;
     -webkit-transition: .2s ease-out;
     -webkit-transition-delay: 1ms;
