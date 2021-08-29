@@ -7,7 +7,8 @@ import LocationsComponents from "../locations/LocationsComponents";
 
 import '../../styles/Wrap.css'
 import '../../logo.svg'
-export default function Wrap() {
+import CharacterInfo from "../characters/CharacterInfo";
+export default function Wrap({item}) {
     return (
         <BrowserRouter>
             <div className="wrap">
@@ -31,6 +32,7 @@ export default function Wrap() {
                     <Route path={'/locations'} component={LocationsComponents}/>
                     <Route path={'/characters'} component={CharactesComponent}/>
                     <Route path={'/my-watch-list'} component={MyWatchListComponent}/>
+
                 </Switch>
             </div>
         </BrowserRouter>

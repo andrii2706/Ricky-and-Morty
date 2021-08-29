@@ -1,8 +1,9 @@
 import {useEffect, useState} from "react";
 import {getInfoOf} from "../../api/API";
-import DetailInfo from "./Detail-info";
+import DetailInfo from "./DetailInfo";
 
 export default function CharacterInfo({id}){
+
  const [charInfo, setcharInfo] = useState([]);
  useEffect(()=>{
      getInfoOf(id).then(value => setcharInfo([value.data]))
@@ -10,7 +11,7 @@ export default function CharacterInfo({id}){
     return(
 <div>
     {
-        charInfo && charInfo.map(value => <DetailInfo item={value}/>)
+        charInfo.map(value => <DetailInfo item={value}/>)
     }
 </div>
 )}
