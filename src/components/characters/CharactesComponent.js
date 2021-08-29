@@ -3,6 +3,7 @@ import CharacterComponent from "./CharacterComponent";
 import "../../styles/Characters.css";
 import "../../styles/Pagination.css"
 import Filter from "../filter/Filter";
+import {getInfoOf} from "../../api/API";
 
 export default function CharactesComponent(props) {
 
