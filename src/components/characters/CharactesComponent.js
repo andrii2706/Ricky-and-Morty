@@ -2,11 +2,13 @@ import {useEffect, useState} from "react";
 import CharacterComponent from "./CharacterComponent";
 import "../../styles/Characters.css";
 import "../../styles/Pagination.css"
+import Filter from "../filter/Filter";
 
-export default function CharactesComponent() {
+export default function CharactesComponent(props) {
 
-    const [characters, setCharacters] = useState([])
-    const [info, setInfo] = useState({})
+    const [characters, setCharacters] = useState([]);
+    const [info, setInfo] = useState({});
+
     const url = 'https://rickandmortyapi.com/api/character'
 
     const fecthCharacters = (url) => {
@@ -29,6 +31,7 @@ export default function CharactesComponent() {
         fecthCharacters(info.prev);
         window.scrollTo(0, 0);
     };
+
 
     useEffect(() => {
         fecthCharacters(url);
@@ -56,6 +59,9 @@ export default function CharactesComponent() {
                         </ul>
                     </nav>
                 </div>
+            </div>
+            <div>
+
             </div>
             <div className="block">{
                 characters.map(value => <CharacterComponent item={value}/>)
