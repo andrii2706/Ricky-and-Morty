@@ -1,0 +1,14 @@
+.more-info{
+    background: #616b89;
+    border-radius: 20px;
+
+    width: 500px;
+    margin-bottom: 25px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

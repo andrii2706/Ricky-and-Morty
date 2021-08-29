@@ -1,11 +1,14 @@
 .episode-card {
     width: 400px;
     background: #616b89;
+
     border-radius: 10px;
+
     margin-bottom: 15px;
+
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     flex-direction: column;
 }
 

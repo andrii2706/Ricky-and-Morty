@@ -8,7 +8,8 @@ export default function CharacterComponent({item}) {
     return (
         <BrowserRouter>
 
-                <div><Link to={"/" + item.id}>
+                <div className="link">
+                    <Link to={"/" + item.id}>
                     <div className="card">
                         <div className="info">
                             <img src={item.image} alt="characters" className="image"/>

@@ -1,8 +1,10 @@
 .block {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
     column-gap: 25px;
-    margin: 20px 150px;
+
 }
 
 .card {
@@ -24,5 +26,20 @@
 .image {
     border-radius: 12px;
 }
+.link a {
+    color: white;
+    text-decoration: none;
 
+}
+.link :hover{
+    font-weight: 500;
+    -webkit-transition: .2s ease-out;
+    -webkit-transition-delay: 1ms;
+    -o-transition: .2s ease-out;
+    -o-transition-delay: 1ms;
+    -moz-transition: .2s ease-out;
+    -moz-transition-delay: 1ms;
+    transition: .2s ease-out;
+    transition-delay: 1ms;
+}
 
