@@ -15,5 +15,5 @@ export default function HomeComponent() {
                 <p>Thank you for your attention. :)</p>
             </div>
         </div>
-    )
+    );
 }

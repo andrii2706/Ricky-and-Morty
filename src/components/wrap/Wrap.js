@@ -8,6 +8,7 @@ import LocationsComponents from "../locations/LocationsComponents";
 import '../../styles/Wrap.css'
 import '../../logo.svg'
 import CharacterInfo from "../characters/CharacterInfo";
+
 export default function Wrap({item}) {
     return (
         <BrowserRouter>

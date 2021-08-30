@@ -10,5 +10,5 @@ export default function View({item, deleteList}) {
                 <Icon icon={trash}/>
             </td>
         </div>
-    )
+    );
 }

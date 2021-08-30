@@ -17,6 +17,7 @@
 .wrap a:hover {
     font-size: 25px;
     color: darkblue;
+
     -webkit-transition: .2s ease-out;
     -webkit-transition-delay: 1ms;
     -o-transition: .2s ease-out;

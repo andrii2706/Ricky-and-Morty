@@ -25,7 +25,9 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+
     width: 250px;
+
     background: #616b89;
     border-radius: 10px;
 }

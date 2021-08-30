@@ -7,5 +7,5 @@ export default function LocationComponent({item}) {
             <h3>{item.type}</h3>
             <h4>{item.dimension}</h4>
         </div>
-    )
+    );
 }

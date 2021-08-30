@@ -3,13 +3,12 @@ import {BrowserRouter, Link, Route, Router, Switch} from "react-router-dom";
 import CharacterInfo from "./CharacterInfo";
 
 
-
 export default function CharacterComponent({item}) {
     return (
         <BrowserRouter>
 
-                <div className="link">
-                    <Link to={"/" + item.id}>
+            <div className="link">
+                <Link to={"/" + item.id}>
                     <div className="card">
                         <div className="info">
                             <img src={item.image} alt="characters" className="image"/>

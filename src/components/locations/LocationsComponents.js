@@ -61,5 +61,5 @@ export default function LocationsComponents() {
                 }
             </div>
         </div>
-    )
+    );
 }

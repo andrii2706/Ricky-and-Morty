@@ -1,13 +1,17 @@
 .header {
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     font-size: 45px;
 }
 
 .paragraph p {
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     font-size: 25px;
 }

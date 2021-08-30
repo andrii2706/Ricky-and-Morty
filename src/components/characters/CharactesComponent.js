@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {useForm} from 'react-hook-form';
 import CharacterComponent from "./CharacterComponent";
 import "../../styles/Characters.css";
 import "../../styles/Pagination.css"
@@ -8,7 +9,6 @@ export default function CharactesComponent() {
 
     const [characters, setCharacters] = useState([]);
     const [info, setInfo] = useState({});
-
     const url = 'https://rickandmortyapi.com/api/character'
 
     const fecthCharacters = (url) => {
@@ -32,10 +32,11 @@ export default function CharactesComponent() {
         window.scrollTo(0, 0);
     };
 
-
     useEffect(() => {
         fecthCharacters(url);
     }, []);
+
+
     return (
         <div>
             <div className="pagination">
@@ -59,9 +60,6 @@ export default function CharactesComponent() {
                         </ul>
                     </nav>
                 </div>
-            </div>
-            <div>
-
             </div>
             <div className="block">{
                 characters.map(value => <CharacterComponent item={value}/>)

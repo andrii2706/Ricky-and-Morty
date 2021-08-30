@@ -24,6 +24,7 @@ li {
 .page-link:hover {
     color: tomato;
     background: #282c34;
+
     -webkit-transition: .2s ease-out;
     -webkit-transition-delay: 1ms;
     -o-transition: .2s ease-out;
